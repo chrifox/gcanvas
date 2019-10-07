@@ -21,6 +21,7 @@ program
   .option('-D, --tooldiameter <number>', 'diameter of tool', eval)
   .option('-b, --bounds <width>x<height>x<depth>', 'standard canvas width/height + depth', String)
   .option('-e, --entry <name>', 'name of entry function to call  (default: main)', 'main')
+  .option('-fd, --filamentdiameter <number>', 'diameter of filament', eval)
   .option('--mm', 'set unit mode to metric')
   .option('--inch', 'set unit mode to imperial')
   .option('--step <number>', 'skip to step n', eval)
@@ -48,6 +49,7 @@ if(program.retract) gctx.retract = program.retract;
 if(program.width) gctx.canvas.width = program.width;
 if(program.height) gctx.canvas.height = program.height;
 if(program.tooldiameter) gctx.toolDiameter = program.tooldiameter;
+if(program.filamentdiameter) gctx.filamentDiameter = program.filamentDiameter;
 
 var setupNum = 0;
 var setupOffset = program.only || program.step || 0;
